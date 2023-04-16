@@ -1,3 +1,4 @@
+
 // const keyword: used for defining constants
 // logically const values should not change
 // technically, stil if you  change that you get: TypeError(avoid that)
@@ -42,23 +43,12 @@ let y = 20;
 y = y + 10 * 2 / 3 % 7 - 5;
 console.log(y);
 
-/*
-Assignment: 
-LECTURE: Values and Variables
-1. Declare variables called 'country', 'continent' and 'population' and 
-assign their values according to your own country (population in millions)
-2. Log their values to the console
-*/
-country = "India"
-continent = "Asia"
-population = 1.2 * 1000000000 //1.2 Billion
-console.log(country, "which is in", continent, "has a population of", population, "people" );
 
 // Data Types in JS
 // There can be only two kinds of things in JS: Primitive & Object types
 
 // Primitive Types
-// ==================================IMP====================================
+// ====IMP====
 // There are 7 primitive data types in JS
 // Number:  represents floating point numbers (both integers and reals)
 // String: represent sequence of chars (no character type)
@@ -130,7 +120,6 @@ let z = 14;
 z = z - 10 - 2; //LR
 z = z ** 2 ** 3;  //RL
 
-
 // string templates(a way of string interpolation)
 // synatx:    `content goes here`
 let akashName = "Akash Maji";
@@ -165,9 +154,207 @@ difficult to write string\n\
 I am \"not\" willing to \'write\' it like this!';
 console.log(longStr);
 
-
 //prefer this
 longStr = `This is a \t very good (1000 times)
 way to write string
 I am "very" willing to 'write' it like this!`;
 console.log(longStr);
+
+
+// console.log("You can do 😎");
+// Conditional Execution: if/else control structure
+
+let hisAge = 23;
+let isEligible = hisAge >= 18;
+if(isEligible){
+    console.log("You are eligible to vote ✌");
+}else{
+    console.log("You are N0T eligible to vote 😒");
+    console.log(`Please wait ${hisAge-18} more years`);
+}
+
+let yearOfBirth = 1999;
+let bornInMillenium = yearOfBirth <= 2000
+if(bornInMillenium){
+    console.log("You are born in 2000 millenium! 😎");
+}else{
+    console.log("You are born in 21st century. 😁")
+}
+
+// type conversion is of two types:
+// type casting: by us
+// type corecion: by JS
+
+// CASTING
+console.log(Number("1234"));
+console.log(Number("akash")); //NaN
+console.log(typeof NaN);
+
+console.log(String(12234));
+console.log(String(12.89));
+console.log(String(null));
+
+// COERCION
+let tricky = 10 + '1'; // "101"
+console.log(tricky);
+tricky = tricky - 100;
+console.log(tricky);
+
+tricky = "10" - "4" - "3" - 2 + "5";  //"15"
+console.log(tricky);
+console.log(tricky / 2);
+console.log(tricky / "2");
+
+console.log("I am " +  13 + " years old.");
+console.log("I am very " + 13 + 2 + " kg weighted.");
+
+// falsy values
+// JS has these as falsy:   false   0  ""  NaN  null  undefined
+console.log(Boolean(0));
+console.log(Boolean(""));
+console.log(Boolean(false));
+console.log(Boolean(NaN));
+console.log(Boolean(null));
+console.log(Boolean(undefined));
+
+console.log(Boolean(" ")); //space
+console.log(Boolean(Number("123"))); 
+console.log(Boolean(String("")));
+console.log(Boolean(Number("123Rummy")));
+
+
+let marks;
+if(marks){
+    console.log("It has valid value :)");
+}else{
+    console.log("It has NO value :(")
+}
+
+marks = 0;
+if(marks){
+    console.log("It has valid value :)");
+}else{
+    console.log("It has NO value :(")
+}
+
+marks = "23";
+if(marks){
+    console.log("It has valid value :)");
+}else{
+    console.log("It has NO value :(")
+}
+
+marks = Number("23marks");
+if(marks){
+    console.log("It has valid value :)");
+}else{
+    console.log("It has NO value :(")
+}
+
+marks = null;
+if(marks){
+    console.log("It has valid value :)");
+}else{
+    console.log("It has NO value :(")
+}
+
+// type cconversion
+age = 28;
+if (age === 18){
+    console.log("You just became 18 :)");
+}else{
+    console.log("You are either kid or old");
+}
+
+
+age = "18"
+if(age == 18){
+    console.log("You are 18 too")
+}
+
+// try using === wherever possible to avoid weird js bugs
+const yob = prompt("What is your YOB?");
+console.log(typeof yob);
+
+if(yob <= 2000){
+    console.log("u r kid");
+} 
+
+if(Number(yob) === 2000){
+    console.log("2000 ka janma baccha");
+}
+
+let inp = prompt("Age:");
+// age = Number(age)
+if(age !== 18){   // true with "18"
+    console.log("This is noy your first vote");
+}
+
+// boolean logic: and or not (   &&   ||    !  )
+age = 19
+let testScore = 99
+let cond1 = age >= 18
+let cond2 = testScore >= 90
+if(cond1 && cond2){
+    console.log("You are about to appear in interview");
+}
+
+// lets look at a problem
+age = 19;
+let eyesight = "good"
+let someoneIsEligile = age >= 18
+let someoneHasGoodVision = eyesight.toUpperCase() == "GOOD"
+let someIsTired = false
+
+if(someoneIsEligile && someoneHasGoodVision && !someIsTired){
+    console.log("You can drive 🚗");
+}else{
+    console.log("You can't drive");
+}
+
+
+// ternary opr
+age = 19
+const drink = age >= 18 ? "wine🍷" : "water🥛";
+console.log(drink);
+
+// we can put this inside string templates
+const str = `This is to certify that your age is ${age} and so\
+ you should drink ${age>=18 ? "wine" : "water" }`;
+console.log(str);
+
+// statements and expressions in JS
+// expressions result in some value
+2 + 6 - 8 * 7;
+"thus added to account no." + 12345;
+// statements result in no value
+const pataNhi = 2 + 4 - 7;
+
+// switch case in JS
+// break needed
+const weekday = "wednesday";
+switch(weekday){
+    case "monday":
+        console.log("Plan the week and prepare plan sheet");
+        break;
+    case "tuesday":
+        console.log("refer the study material and learn youself");
+    case "wednesday":
+    case "thursday":
+        console.log("Record the videos by urself");
+    case "friday":
+        console.log("refine your work and optimize");
+        break;
+    case "saturday":
+    case "sunday":
+        console.log("enjoy weekend");
+        break;
+    default:
+        console.log("invalid day");
+}
+
+
+
+
+
+
