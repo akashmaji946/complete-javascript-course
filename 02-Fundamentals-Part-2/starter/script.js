@@ -71,7 +71,7 @@ dummy();
 dummy();
 dummy();
 
-// use of arrow functions sice ES-6
+// use of arrow functions since ES-6
 const getAge3 = birthYear => 2023 - birthYear
 console.log(getAge3(1999));
 
@@ -83,7 +83,9 @@ const yearsTillRetirement = (hisName, hisYOB) => {
 
 yearsTillRetirement("Akash", 1999);
 
-
+//WAF to calculate SI
+const si = (p, r, t) => (p * r * t)/100.0
+console.log(si(1000, 10, 2));
 
 
 
