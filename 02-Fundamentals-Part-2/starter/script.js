@@ -88,5 +88,24 @@ const si = (p, r, t) => (p * r * t)/100.0
 console.log(si(1000, 10, 2));
 
 
+// arrays in js
+// arrays are used to hold different kinds of data itms / other structure
+
+const friends = ["Raju", "Kaju", "Baju"];
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends[friends.length - 1]);
+
+
+console.log(friends.length);
+console.log(friends);
+
+// array elements  should be valid expressions not statements
+const amounts = ["Akash", "Maji", 2023 - 1999, 8.20, friends]
+console.log(amounts);
+
+
+// git config --global user.email "akashmaji946@gmail.com"
+// git config --global user.name "Akash Maji"
 
 
