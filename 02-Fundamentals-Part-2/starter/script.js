@@ -109,3 +109,130 @@ console.log(amounts);
 // git config --global user.name "Akash Maji"
 
 
+function findAge(yr){
+    return 2023 - yr;
+}
+// changing arrays' elems
+console.log(amounts);
+amounts[2] = findAge(1990);
+console.log(amounts);
+
+
+// function calls are valid expressions
+const ages = [findAge(1990), findAge(1991), findAge(1992), 
+findAge(1994)];
+console.log(ages);
+
+// more on arrays
+// ages = []; //gives error Uncaught TypeError: Assignment to constant variable.
+
+
+// array methods in js
+const myarr = ["hi", "this", "is", "a", "lovely", "place"]
+console.log(myarr);
+
+// push: add to end
+// return the new length
+myarr.push("wow");
+console.log(myarr);
+
+// unshift: add to front
+// return the new length
+myarr.unshift("hola");
+console.log(myarr);
+
+// shift: delete the first
+// return the deleted
+myarr.shift();
+console.log(myarr);
+
+//pop: delete the last
+// return the popped
+myarr.pop();
+console.log(myarr);
+
+
+// more array methods
+const myarr2 = ["hi", "this", "is", "a", "lovely", "place"];
+console.log(myarr2.length);
+console.log(myarr2.includes("this"));
+
+// tip calculator
+
+const tipFinder = function(bill){
+    if(bill < 100) return bill * 0.05;
+    else if(bill >= 100 && bill <= 500) return bill * 0.10
+    else return bill * 0.20
+}
+
+console.log(tipFinder(100));
+
+let tips = []
+let bills = [100, 10, 200, 500, 600, 0, 1000]
+
+for(let i = 0; i < bills.length; i++){
+    tips.push(tipFinder(bills[i]));
+}
+console.log(tips);
+
+
+// objects is javascript
+
+// what is an object?
+// it is an important data structure that helps me
+// maintain key value pairs
+
+// it is very fundamental in js
+// common way to define is using {}
+ const obj = {
+        firstname: "Akash",
+        lastname: "Maji",
+        age: 24,
+        friends: ["mani", "sani", "bani"]
+ }
+
+ console.log(obj);
+
+ // dot vs bracket notation
+console.log(obj.lastname);
+console.log(obj.firstname);
+console.log(obj["age"])
+console.log(obj["last" + "name"]);
+console.log(obj[`${"first"}${"name"}`])
+
+const prop = "first";
+console.log(prop + "name");
+console.log(obj[prop + "name"]);
+
+// what happens if i try to access a property that does not exist
+// well i get undefined
+
+console.log(obj.twitter);
+console.log(obj["gmail"]);
+
+// adding more properties
+obj.twitter = "user@twitter.com";
+obj["gmail"] = "haha@gmail.com";
+console.log(obj.twitter, obj.gmail);
+
+// how to get output like this?
+// Akash Maji has 3 friends, and his best friend is mani
+function getInfo(obj){
+    if(obj && obj.friends && obj.friends.length > 0){
+        const str = `${obj.firstname} ${obj.lastname} has ${obj.friends.length} friends, \
+and his best friend is ${obj.friends[0]}`;
+        return str;
+    }
+    else{
+        return "Not possible."
+    }
+
+}
+console.log(getInfo(obj));
+
+
+
+
+
+
+
